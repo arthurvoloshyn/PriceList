@@ -35,15 +35,15 @@
   margin: 20px;
 }
 
-@media screen and (max-width: 664px) {
-  .wrap {
-    margin: 10px;
-  }
-}
-
 @media screen and (max-width: 1100px) {
   .wrap {
     display: block;
+  }
+}
+
+@media screen and (max-width: 664px) {
+  .wrap {
+    margin: 10px;
   }
 }
 
