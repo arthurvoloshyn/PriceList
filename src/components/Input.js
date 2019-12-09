@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Input = ({ value, onChange, onSubmit }) => (
+const Input = ({ value, onChange, onSubmit, onKeyPress }) => (
   <form onSubmit={onSubmit} className='form'>
     <input
       className='input'
@@ -9,6 +9,8 @@ const Input = ({ value, onChange, onSubmit }) => (
       max='90'
       value={value}
       onChange={onChange}
+      onKeyPress={onKeyPress}
+      required
     />
   </form>
 );

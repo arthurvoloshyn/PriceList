@@ -79,6 +79,7 @@ class Price extends Component{
                 value={stayDays}
                 onChange={this.onInputChange}
                 onSubmit={this.onInputSubmit}
+                onKeyPress={this.onInputSubmit}
                 id='days'
               />
 
