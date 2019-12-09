@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import Price from '../containers/Price';
 
 describe('Price container', () => {
-  it('renders Additional services header', () => {
+  it('Renders Additional services header', () => {
     const { getByText } = render(<Price />);
     const linkElement = getByText(/Additional services/i);
     expect(linkElement).toBeInTheDocument();
