@@ -6,7 +6,7 @@ const Input = ({ value, onChange, onSubmit, onKeyPress }) => (
       className='input'
       type='number'
       min='1'
-      max='90'
+      max='99'
       value={value}
       onChange={onChange}
       onKeyPress={onKeyPress}
