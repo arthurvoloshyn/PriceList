@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheckCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
-import { products, imgSrc } from '../utils'
+
+import { products } from '../utils';
+
 import Input from '../components/Input';
 
-class Price extends Component{
+import bg from '../img/bg.png';
+
+class Price extends Component {
+  inputMaxLength = 2;
   state = {
     products,
     sum: 55,
-    stayDays: 7,
+    stayDays: 7
   };
 
   onInputChange = ({ target: { value } }) => {
-    const stayDays = value;
+    const stayDays = value.slice(0, this.inputMaxLength);
 
     this.setState({ stayDays });
     this.updateSum(stayDays);
@@ -38,12 +41,13 @@ class Price extends Component{
     let addPrice;
 
     products.forEach(({ price, dayPrice, add }) => {
-      const totalPrice = dayPrice ? stayDays : 1;
+      const singlePrice = 1;
+      const totalDays = dayPrice ? stayDays : singlePrice;
 
-      addPrice = price * totalPrice;
+      addPrice = price * totalDays;
 
       if (add) {
-        allItemsSum += addPrice
+        allItemsSum += addPrice;
       }
     });
 
@@ -52,7 +56,11 @@ class Price extends Component{
     });
   };
 
-  handleClick = ({ currentTarget: { dataset: { index } } }) => {
+  handleClick = ({
+    currentTarget: {
+      dataset: { index }
+    }
+  }) => {
     const { stayDays } = this.state;
 
     this.changeAdd(index);
@@ -63,49 +71,33 @@ class Price extends Component{
     const { products, sum, stayDays } = this.state;
 
     return (
-      <div className='card'>
+      <div className="card">
         <h2>Additional services</h2>
 
-        <div className='wrap'>
-          <div className='left'>
-            <img src={imgSrc} alt='Prices' />
+        <div className="wrap">
+          <div className="left">
+            <img src={bg} alt="Prices" />
 
-            <div className='form'>
-              <label className='prev__input form-label' htmlFor='days'>
+            <div className="form">
+              <label className="prev__input form-label" htmlFor="days">
                 Stay time:
               </label>
 
-              <Input
-                value={stayDays}
-                onChange={this.onInputChange}
-                onSubmit={this.onInputSubmit}
-                onKeyPress={this.onInputSubmit}
-                id='days'
-              />
+              <Input value={stayDays} onChange={this.onInputChange} onSubmit={this.onInputSubmit} id="days" />
 
-              <label className='after__input form-label' htmlFor='days'>
+              <label className="after__input form-label" htmlFor="days">
                 Days
               </label>
             </div>
           </div>
 
-          <div className='right'>
+          <div className="right">
             <ul>
               {products.map(({ add, dayPrice, name, price }, index) => (
-                <li
-                  data-index={index}
-                  onClick={this.handleClick}
-                  className='product price__add'
-                  key={index}
-                >
+                <li data-index={index} onClick={this.handleClick} className="product price__add" key={index}>
+                  {add ? <i className="fas fa-check-circle icon icon-delete delete" /> : <i className="fas fa-plus-circle icon icon-add add" />}
 
-                  {add ? (
-                    <FontAwesomeIcon icon={faCheckCircle} className='icon icon-delete delete' />
-                  ) : (
-                    <FontAwesomeIcon icon={faPlusCircle} className='icon icon icon-add add' />
-                  )}
-
-                  <div className='price__descr'>
+                  <div className="price__descr">
                     <div
                       className={cn('price__item', {
                         'day-price': dayPrice
@@ -126,10 +118,10 @@ class Price extends Component{
               ))}
             </ul>
 
-            <div className='price__summe'>
+            <div className="price__summe">
               <h3>total:</h3>
 
-              <span className='summe-span'>
+              <span className="summe-span">
                 € {sum}.<sup>00</sup>
               </span>
             </div>

@@ -1,6 +1,6 @@
 .App {
-  width: fit-content;
   margin: 0 auto;
+  width: fit-content;
 }
 
 @media screen and (max-width: 664px) {
@@ -10,9 +10,9 @@
 }
 
 .card {
-  margin: 40px;
-  box-shadow: 7px 13px 49px -5px rgba(86, 63, 130, 0.78);
   border-radius: 30px;
+  box-shadow: 7px 13px 49px -5px rgba(86, 63, 130, 0.78);
+  margin: 40px;
   padding: 10px 40px;
 }
 
@@ -53,24 +53,24 @@
 
 @media screen and (max-width: 664px) {
   .left {
-    margin: 0;
-    display: flex;
     align-items: center;
-    justify-content: center;
+    display: flex;
     flex-direction: column;
+    justify-content: center;
+    margin: 0;
   }
 }
 
 .form {
-  display: flex;
   align-items: baseline;
-  margin-top: 30px;
+  display: flex;
   margin-bottom: 30px;
+  margin-top: 30px;
 }
 
 .form-label {
-  margin: 0 10px;
   font-size: 24px;
+  margin: 0 10px;
 }
 
 @media screen and (max-width: 450px) {
@@ -85,18 +85,17 @@ img {
 
 @media screen and (max-width: 664px) {
   img {
-    width: 100%;
     height: auto;
+    width: 100%;
   }
 }
 
 input {
-  border-radius: 10px;
   border: 2px solid #8c78cc;
-  font-weight: 600;
+  border-radius: 10px;
   color: #3d2f71;
-  padding-left: 15px;
   font-size: 18px;
+  font-weight: 600;
   padding: 3px 3px 3px 10px;
 }
 
@@ -116,20 +115,20 @@ h2 {
 }
 
 .price__items {
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
 .price__descr {
-  width: 300px;
   text-align: left;
+  width: 300px;
 }
 
 @media screen and (max-width: 664px) {
   .price__descr {
-    width: 100%;
     margin: 0 10px;
+    width: 100%;
   }
 }
 
@@ -138,18 +137,18 @@ h2 {
 }
 
 .collapse {
+  cursor: pointer;
   margin-bottom: 20px;
   margin-left: 32px;
-  cursor: pointer;
 }
 
 .price__add {
-  font-weight: 600;
   color: #292929;
+  cursor: pointer;
   display: flex;
+  font-weight: 600;
   justify-content: space-between;
   margin-bottom: 20px;
-  cursor: pointer;
   width: 450px;
 }
 
@@ -182,8 +181,8 @@ h2 {
 }
 
 .icon {
-  transition: all .4s linear;
   font-size: 20px;
+  transition: all 0.4s linear;
   width: 22px;
 }
 
@@ -203,8 +202,8 @@ h2 {
   color: #f37490;
 }
 
-.icon-delete:hover path {
-  d: path('M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z') !important;
+.icon-delete:hover:before {
+  content: '\f057';
 }
 
 .collapse__button {
@@ -220,34 +219,30 @@ h2 {
 }
 
 .show {
-  margin-top: 10px;
   font-size: 16px;
+  margin-top: 10px;
   max-width: 420px;
 }
 
-.price__summe {
-  display: flex;
-  align-items: center;
-}
-
 .summe-span {
-  transition: all .4s linear;
+  transition: all 0.4s linear;
 }
 
 h3 {
+  font-weight: 600;
   margin-right: 20px;
   text-transform: uppercase;
-  font-weight: 600;
 }
 
 .price__summe {
+  align-items: center;
   display: flex;
   justify-content: flex-end;
 }
 
 .summe-span {
-  font-weight: 700;
   font-size: 32px;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 450px) {
@@ -257,15 +252,15 @@ h3 {
 }
 
 .fa-github {
-  position: absolute;
-  top: 3%;
-  right: 2%;
   font-size: 38px;
-  transition: all .1s linear;
+  position: absolute;
+  right: 2%;
+  top: 3%;
+  transition: all 0.1s linear;
 }
 
 .fa-github:hover {
-  font-size: 42px;
   color: #dca118;
   cursor: pointer;
+  font-size: 42px;
 }
