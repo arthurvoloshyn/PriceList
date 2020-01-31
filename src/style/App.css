@@ -224,10 +224,6 @@ h2 {
   max-width: 420px;
 }
 
-.summe-span {
-  transition: all 0.4s linear;
-}
-
 h3 {
   font-weight: 600;
   margin-right: 20px;
@@ -243,6 +239,7 @@ h3 {
 .summe-span {
   font-size: 32px;
   font-weight: 700;
+  transition: all 0.4s linear;
 }
 
 @media screen and (max-width: 450px) {
