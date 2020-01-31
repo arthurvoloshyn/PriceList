@@ -8,15 +8,16 @@ import Input from '../components/Input';
 import bg from '../img/bg.png';
 
 class Price extends Component {
-  inputMaxLength = 2;
   state = {
     products,
     sum: 55,
-    stayDays: 7
+    stayDays: 7,
+    inputMaxLength: 2
   };
 
   onInputChange = ({ target: { value } }) => {
-    const stayDays = value.slice(0, this.inputMaxLength);
+    const { inputMaxLength } = this.state;
+    const stayDays = value.slice(0, inputMaxLength);
 
     this.setState({ stayDays });
     this.updateSum(stayDays);
