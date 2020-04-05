@@ -71,6 +71,11 @@ class Price extends Component {
   render() {
     const { products, sum, stayDays } = this.state;
 
+    const priceClasses = (baseClass, condition) =>
+      cn(baseClass, {
+        'day-price': condition
+      });
+
     return (
       <div className="card">
         <h2>Additional services</h2>
@@ -99,20 +104,10 @@ class Price extends Component {
                   {add ? <i className="fas fa-check-circle icon icon-delete delete" /> : <i className="fas fa-plus-circle icon icon-add add" />}
 
                   <div className="price__descr">
-                    <div
-                      className={cn('price__item', {
-                        'day-price': dayPrice
-                      })}
-                    >
-                      {name}
-                    </div>
+                    <div className={priceClasses('price__item', dayPrice)}>{name}</div>
                   </div>
 
-                  <div
-                    className={cn('price', {
-                      'day-price': dayPrice
-                    })}
-                  >
+                  <div className={priceClasses('price', dayPrice)}>
                     € {price}.<sup>00</sup>
                   </div>
                 </li>
