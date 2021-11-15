@@ -247,17 +247,3 @@ h3 {
     font-size: 30px;
   }
 }
-
-.fa-github {
-  font-size: 38px;
-  position: absolute;
-  right: 2%;
-  top: 3%;
-  transition: all 0.1s linear;
-}
-
-.fa-github:hover {
-  color: #dca118;
-  cursor: pointer;
-  font-size: 42px;
-}

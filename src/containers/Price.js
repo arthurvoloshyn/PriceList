@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import cn from 'classnames';
 
-import { products } from '../utils';
+import { products } from '../constants';
 
 import Input from '../components/Input';
 
